@@ -51,9 +51,9 @@ See live data:
 ### Prerequisites
 
 - [Datadog Agent][1] 7.38.0 or higher is installed alongside your service.
-- Recommended: [Unified Service Tagging][5] tags `service`, `env` and `version`
+- [Unified Service Tagging][5] tags `service`, `env` and `version`
   are applied to your deployment.
-- Recommended: [Source Code Integration][6] has been set-up for your service.
+- [Source Code Integration][6] has been set-up for your service.
 
 ### Enable Remote Configuration Management
 
@@ -63,8 +63,8 @@ create a new Remote Configuration key by clicking on the "New Key" button.
 Give a name to your new key and follow the instructions in the modal.
 
 **Note**
-: You will have to update the datadog-agent configuration.
-: You have to be admin to create a Remote Configuration key. This should be a
+Setting this up involves changing the datadog-agent configuration.
+You have to be admin to create a Remote Configuration key. This should be a
 one-time setup per environment. If you do not have the necessary access rights,
 please approach an admin.
 
@@ -99,7 +99,18 @@ application, without the need to do any code change or redeployment.
 
 ### Create a snapshot probe
 
-Create the snapshot probe:
+To create a snapshot probe:
+1. Go to the Live Debugger page
+2. Click "Create Probe" in the top right, or click the three dot context menu
+   on a service and select "Add a probe for this service"
+3. In the create probe modal select "Snapshot" as probe type
+4. If not prefilled, choose a service from the list
+5. If not prefilled, choose environment and version
+6. If you set up Source Code Integration for the service, you can now search
+   the file where you want to set the probe
+7. Once you selected a file, you will be presented with the source code of the
+   file
+8. Click a line to select the line on which to set the probe
 
 {{< img src="tracing/live_debugger/snapshot_probe_creation.mp4" alt="Video demonstrating Live Debugger. A snapshot probe is configured on a service." video="true" >}}
 
@@ -113,7 +124,21 @@ Metric probes are used to emit metrics at a chosen location in your code. The
 Live Debugger expression language can be used to reference numeric values from
 the context, for example from a local variable or a class field.
 
-Create the metric probe:
+To create a metric probe:
+1. Go to the Live Debugger page
+2. Click "Create Probe" in the top right, or click the three dot context menu
+   on a service and select "Add a probe for this service"
+3. In the create probe modal select "Metric" as probe type
+4. Choose a name for the metric
+5. Select a metric type
+6. Input a metric expression
+7. If not prefilled, choose a service from the list
+8. If not prefilled, choose environment and version
+9. If you set up Source Code Integration for the service, you can now search
+   the file where you want to set the probe
+10. Once you selected a file, you will be presented with the source code of the
+    file
+11. Click a line to select the line on which to set the probe
 
 {{< img src="tracing/live_debugger/metric_probe_creation.mp4" alt="Video demonstrating Live Debugger. A metric probe is configured on a service." video="true" >}}
 
@@ -130,7 +155,7 @@ instrumentation is not applied to every instance of your service, but only a
 specific subset.
 
 **Note**
-: If you do not explicitly specify which instances should be instrumented, by
+If you do not explicitly specify which instances should be instrumented, by
 default, the Live Debugger will only enable the instrumentation on one
 randomly-selected instance per service, environment and version combination.
 
