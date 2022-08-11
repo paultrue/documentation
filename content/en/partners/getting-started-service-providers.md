@@ -365,10 +365,9 @@ Depending on your business model, your clients might not require access to Datad
   - [Embeddable Graphs API][91]
   - [Embeddable Graphs with Template Variables][92]
 
+#### Setting up service-level objectives
 
-#### Setting up Service Level Objectives (SLOs)
-
-As a service provider it is a good idea to continually present the quality and level of your services to your clients in a transparent way. Service Level Objectives (SLOs) are a great way to monitor and visualize the service quality on behalf of your clients, and also help your clients implement service level-based reporting internally.
+As a service provider it is a good idea to continually present the quality and level of your services to your clients in a transparent way. Service-level objectives (SLOs) are a great way to monitor and visualize the service quality on behalf of your clients, and also help your clients implement service level-based reporting internally.
 
 The following material might be helpful for you when setting up and managing SLOs:
 - To get started, we recommend [Service Level Objectives 101: Establishing Effective SLOs][93] (Blog). 
